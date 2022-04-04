@@ -95,7 +95,7 @@ function displayWeatherResults(data) {
     firstDayDateEl.textContent = tomorrowDate;
     // Day 1 Icon
     var firstDayIcon = document.querySelector("#icon-1");
-    firstDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + ".png");
+    firstDayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + ".png");
     // Day 1 temp
     var firstDayTempEl = document.querySelector("#day-1-temp");
     firstDayTempEl.textContent = data.daily[0].temp.day + "F";
@@ -112,7 +112,7 @@ function displayWeatherResults(data) {
     secondDayDateEl.textContent = dayTwoDate;
     // Day 2 Icon
     var secondDayIcon = document.querySelector("#icon-2");
-    secondDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + ".png");
+    secondDayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + ".png");
     // Day 2 temp
     var secondDayTempEl = document.querySelector("#day-2-temp");
     secondDayTempEl.textContent = data.daily[1].temp.day + "F";
@@ -129,7 +129,7 @@ function displayWeatherResults(data) {
     thirdDayDateEl.textContent = dayThreeDate;
     // Day 3 Icon
     var thirdDayIcon = document.querySelector("#icon-3");
-    thirdDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png");
+    thirdDayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png");
     // Day 3 temp
     var thirdDayTempEl = document.querySelector("#day-3-temp");
     thirdDayTempEl.textContent = data.daily[2].temp.day + "F";
@@ -146,7 +146,7 @@ function displayWeatherResults(data) {
     fourthDayDateEl.textContent = dayFourDate;
     // Day 4 Icon
     var fourthDayIcon = document.querySelector("#icon-4");
-    fourthDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + ".png");
+    fourthDayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + ".png");
     // Day 4 temp
     var fourthDayTempEl = document.querySelector("#day-4-temp");
     fourthDayTempEl.textContent = data.daily[3].temp.day + "F";
@@ -163,7 +163,7 @@ function displayWeatherResults(data) {
     fifthDayDateEl.textContent = dayFiveDate;
     // Day 5 Icon
     var fifthDayIcon = document.querySelector("#icon-5");
-    fifthDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + ".png");
+    fifthDayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + ".png");
     // Day 5 temp
     var fifthDayTempEl = document.querySelector("#day-5-temp");
     fifthDayTempEl.textContent = data.daily[4].temp.day + "F";

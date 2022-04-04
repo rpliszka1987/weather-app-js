@@ -43,8 +43,6 @@ function getUserLocation(location) {
                 // Convert from Int to Str
                 var latString = locationLat.toString();
                 var lonString = locationLon.toString();
-                console.log(locationLat);
-                console.log(locationLon);
 
                 // Call function to get values
                 getLocationWeather(latString, lonString);
@@ -83,6 +81,8 @@ function displayWeatherResults(data) {
     // City Name and date
     var currentCityNameEl = document.querySelector(".jumbotron-header");
     currentCityNameEl.textContent = locationName.toUpperCase() + " (" + currentDate + ")";
+
+    console.log(data.current.weather[0].icon);
 
     // Current Temp
     var currentTempEl = document.querySelector("#current-temp");

@@ -37,11 +37,11 @@
             <div class="right-column col-md-8">
                 <!-- Jumborton showing current location weather -->
                 <div class="jumbotron jumbotron-style">
-                    <h1 class="jumbotron-header">Atlanta (03/15/22)</h1>
-                    <p id="current-temp">Temp: 74.01F</p>
-                    <p id="current-wind">Wind: 6.67 MPH</p>
-                    <p id="current-humidity">Humidity: 46 %</p>
-                    <p id="current-uv">UV index: <span id="uv-style" class="bg-success">0.47</span></p>
+                    <h1 class="jumbotron-header"></h1>
+                    <p>Temp: <span id="current-temp"></span></p>
+                    <p>Wind: <span id="current-wind"></span></p>
+                    <p>Humidity: <span id="current-humidity"></span></p>
+                    <p>UV index: <span id="uv-style" class="bg-success"></span></p>
                 </div>
                 <!-- Five day forecast -->
                 <div class="forecast-container">
@@ -52,11 +52,11 @@
                         <div class="col-md-2">
                             <div class="card card-style">
                                 <div class="card-body">
-                                    <h3>3/31/22</h3>
-                                    <p>Icon</p>
-                                    <p>Temp: 73.72 F</p>
-                                    <p>Wind: 9.53 MPH</p>
-                                    <p>Humidity: 66 %</p>
+                                    <h3 id="day-1-date"></h3>
+                                    <p><img id="icon-1"></p>
+                                    <p>Temp: <span id="day-1-temp"></span></p>
+                                    <p>Wind: <span id="day-1-wind"></span></p>
+                                    <p>Humidity: <span id="day-1-humidity"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -64,11 +64,11 @@
                         <div class="col-md-2">
                             <div class="card card-style">
                                 <div class="card-body">
-                                    <h3>3/31/22</h3>
-                                    <p>Icon</p>
-                                    <p>Temp: 73.72 F</p>
-                                    <p>Wind: 9.53 MPH</p>
-                                    <p>Humidity: 66 %</p>
+                                    <h3 id="day-2-date"></h3>
+                                    <p><img id="icon-2"></p>
+                                    <p>Temp: <span id="day-2-temp"></span></p>
+                                    <p>Wind: <span id="day-2-wind"></span></p>
+                                    <p>Humidity: <span id="day-2-humidity"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -76,11 +76,11 @@
                         <div class="col-md-2">
                             <div class="card card-style">
                                 <div class="card-body">
-                                    <h3>3/31/22</h3>
-                                    <p>Icon</p>
-                                    <p>Temp: 73.72 F</p>
-                                    <p>Wind: 9.53 MPH</p>
-                                    <p>Humidity: 66 %</p>
+                                    <h3 id="day-3-date"></h3>
+                                    <p><img id="icon-3"></p>
+                                    <p>Temp: <span id="day-3-temp"></span></p>
+                                    <p>Wind: <span id="day-3-wind"></span></p>
+                                    <p>Humidity: <span id="day-3-humidity"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -88,11 +88,11 @@
                         <div class="col-md-2">
                             <div class="card card-style">
                                 <div class="card-body">
-                                    <h3>3/31/22</h3>
-                                    <p>Icon</p>
-                                    <p>Temp: 73.72 F</p>
-                                    <p>Wind: 9.53 MPH</p>
-                                    <p>Humidity: 66 %</p>
+                                    <h3 id="day-4-date"></h3>
+                                    <p><img id="icon-4"></p>
+                                    <p>Temp: <span id="day-4-temp"></span></p>
+                                    <p>Wind: <span id="day-4-wind"></span></p>
+                                    <p>Humidity: <span id="day-4-humidity"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -100,11 +100,11 @@
                         <div class="col-md-2">
                             <div class="card card-style">
                                 <div class="card-body">
-                                    <h3>3/31/22</h3>
-                                    <p>Icon</p>
-                                    <p>Temp: 73.72 F</p>
-                                    <p>Wind: 9.53 MPH</p>
-                                    <p>Humidity: 66 %</p>
+                                    <h3 id="day-5-date"></h3>
+                                    <p><img id="icon-5"></p>
+                                    <p>Temp: <span id="day-5-temp"></span></p>
+                                    <p>Wind: <span id="day-5-wind"></span></p>
+                                    <p>Humidity: <span id="day-5-humidity"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -116,6 +116,8 @@
         </div>
 
     </main>
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!-- JavaScript script -->
     <script src="./assets/js/script.js"></script>
 </body>

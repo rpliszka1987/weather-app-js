@@ -6,13 +6,19 @@ var dayTwoDate = moment().add(2, 'days').format("M[/]D[/]YY");
 var dayThreeDate = moment().add(3, 'days').format("M[/]D[/]YY");
 var dayFourDate = moment().add(4, 'days').format("M[/]D[/]YY");
 var dayFiveDate = moment().add(5, 'days').format("M[/]D[/]YY");
+var locationName = "";
 
 // From submit get input
-function formSubmitHaldler() {
+function formSubmitHaldler(event) {
     event.preventDefault();
 
-    // get input from user
-    var locationName = locationInputEl.value.trim();
+    if (!locationName) {
+        locationName = "";
+        // get input from user
+        locationName = locationInputEl.value.trim();
+    }
+
+
 
     if (locationName) {
         getUserLocation(locationName);
@@ -73,10 +79,10 @@ function getLocationWeather(lat, lon) {
 };
 
 function displayWeatherResults(data) {
+
     // City Name and date
     var currentCityNameEl = document.querySelector(".jumbotron-header");
-    var cityName = data.timezone.split("/")[1];
-    currentCityNameEl.textContent = cityName + " (" + currentDate + ")";
+    currentCityNameEl.textContent = locationName.toUpperCase() + " (" + currentDate + ")";
 
     // Current Temp
     var currentTempEl = document.querySelector("#current-temp");
@@ -94,6 +100,9 @@ function displayWeatherResults(data) {
     // Day 1 Date
     var firstDayDateEl = document.querySelector("#day-1-date");
     firstDayDateEl.textContent = tomorrowDate;
+    // Day 1 Icon
+    var firstDayIcon = document.querySelector("#icon-1");
+    firstDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + ".png");
     // Day 1 temp
     var firstDayTempEl = document.querySelector("#day-1-temp");
     firstDayTempEl.textContent = data.daily[0].temp.day + "F";
@@ -108,6 +117,9 @@ function displayWeatherResults(data) {
     // Day 2 Date
     var secondDayDateEl = document.querySelector("#day-2-date");
     secondDayDateEl.textContent = dayTwoDate;
+    // Day 2 Icon
+    var secondDayIcon = document.querySelector("#icon-2");
+    secondDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + ".png");
     // Day 2 temp
     var secondDayTempEl = document.querySelector("#day-2-temp");
     secondDayTempEl.textContent = data.daily[1].temp.day + "F";
@@ -122,6 +134,9 @@ function displayWeatherResults(data) {
     // Day 3 Date
     var thirdDayDateEl = document.querySelector("#day-3-date");
     thirdDayDateEl.textContent = dayThreeDate;
+    // Day 3 Icon
+    var thirdDayIcon = document.querySelector("#icon-3");
+    thirdDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png");
     // Day 3 temp
     var thirdDayTempEl = document.querySelector("#day-3-temp");
     thirdDayTempEl.textContent = data.daily[2].temp.day + "F";
@@ -136,6 +151,9 @@ function displayWeatherResults(data) {
     // Day 4 Date
     var fourthDayDateEl = document.querySelector("#day-4-date");
     fourthDayDateEl.textContent = dayFourDate;
+    // Day 4 Icon
+    var fourthDayIcon = document.querySelector("#icon-4");
+    fourthDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + ".png");
     // Day 4 temp
     var fourthDayTempEl = document.querySelector("#day-4-temp");
     fourthDayTempEl.textContent = data.daily[3].temp.day + "F";
@@ -150,6 +168,9 @@ function displayWeatherResults(data) {
     // Day 5 Date
     var fifthDayDateEl = document.querySelector("#day-5-date");
     fifthDayDateEl.textContent = dayFiveDate;
+    // Day 5 Icon
+    var fifthDayIcon = document.querySelector("#icon-5");
+    fifthDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + ".png");
     // Day 5 temp
     var fifthDayTempEl = document.querySelector("#day-5-temp");
     fifthDayTempEl.textContent = data.daily[4].temp.day + "F";

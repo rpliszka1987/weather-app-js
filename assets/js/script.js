@@ -9,16 +9,11 @@ var dayFiveDate = moment().add(5, 'days').format("M[/]D[/]YY");
 var locationName = "";
 
 // From submit get input
-function formSubmitHaldler(event) {
+function formSubmitHaldler() {
     event.preventDefault();
-
-    if (!locationName) {
-        locationName = "";
-        // get input from user
-        locationName = locationInputEl.value.trim();
-    }
-
-
+    locationName = "";
+    // get input from user
+    locationName = locationInputEl.value.trim();
 
     if (locationName) {
         getUserLocation(locationName);
@@ -81,8 +76,6 @@ function displayWeatherResults(data) {
     // City Name and date
     var currentCityNameEl = document.querySelector(".jumbotron-header");
     currentCityNameEl.textContent = locationName.toUpperCase() + " (" + currentDate + ")";
-
-    console.log(data.current.weather[0].icon);
 
     // Current Temp
     var currentTempEl = document.querySelector("#current-temp");

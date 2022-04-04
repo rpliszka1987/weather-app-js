@@ -25,7 +25,7 @@ function formSubmitHaldler() {
 // get coordinates for user location
 function getUserLocation(location) {
     // Get location lon and lat
-    var apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=1&appid=bb2c88d223252f9cbf3c41f7d0c2aa16";
+    var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=1&appid=bb2c88d223252f9cbf3c41f7d0c2aa16";
 
     // Make fetch request
     fetch(apiUrl).then(function (response) {

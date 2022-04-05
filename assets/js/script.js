@@ -39,6 +39,18 @@ function getUserLocation(location) {
                 var latString = locationLat.toString();
                 var lonString = locationLon.toString();
 
+                var locationArray = [];
+                locationArray.push(location);
+
+
+                if (localStorage.getItem('searchHistory')) {
+                    locationArray = [...JSON.parse(localStorage.getItem('searchHistory'))];
+                    locationArray.push(location);
+                    localStorage.setItem('searchHistory', JSON.stringify(locationArray));
+                } else {
+                    localStorage.setItem('searchHistory', JSON.stringify(locationArray));
+                }
+
                 // Call function to get values
                 getLocationWeather(latString, lonString);
             });
@@ -49,6 +61,10 @@ function getUserLocation(location) {
         alert("Unable to get weather");
     });
 };
+
+function reloadPage() {
+
+}
 
 // get location weather
 function getLocationWeather(lat, lon) {
@@ -79,9 +95,6 @@ function displayWeatherResults(data) {
     // Weather Icon
     var currentWeatherIconEl = document.querySelector("#current-icon");
     currentWeatherIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png")
-
-
-
 
     // Current Temp
     var currentTempEl = document.querySelector("#current-temp");

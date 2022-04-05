@@ -76,6 +76,12 @@ function displayWeatherResults(data) {
     // City Name and date
     var currentCityNameEl = document.querySelector(".jumbotron-header");
     currentCityNameEl.textContent = locationName.toUpperCase() + " (" + currentDate + ")";
+    // Weather Icon
+    var currentWeatherIconEl = document.querySelector("#current-icon");
+    currentWeatherIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png")
+
+
+
 
     // Current Temp
     var currentTempEl = document.querySelector("#current-temp");

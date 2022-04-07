@@ -7,9 +7,10 @@ var dayThreeDate = moment().add(3, 'days').format("M[/]D[/]YY");
 var dayFourDate = moment().add(4, 'days').format("M[/]D[/]YY");
 var dayFiveDate = moment().add(5, 'days').format("M[/]D[/]YY");
 var locationName = "";
+var previousSearch = document.querySelector("#previous-search");
 
 // From submit get input
-function formSubmitHaldler() {
+function formSubmitHandler() {
     event.preventDefault();
     locationName = "";
     // get input from user
@@ -42,11 +43,19 @@ function getUserLocation(location) {
                 var locationArray = [];
                 locationArray.push(location);
 
+                var recentItem = document.createElement("button");
+                recentItem.textContent = location;
+                recentItem.setAttribute("id", location);
+                recentItem.className = "btn btn-primary col-12 btn-style btn-recent";
+                previousSearch.appendChild(recentItem);
+
+
 
                 if (localStorage.getItem('searchHistory')) {
                     locationArray = [...JSON.parse(localStorage.getItem('searchHistory'))];
                     locationArray.push(location);
                     localStorage.setItem('searchHistory', JSON.stringify(locationArray));
+
                 } else {
                     localStorage.setItem('searchHistory', JSON.stringify(locationArray));
                 }
@@ -63,7 +72,17 @@ function getUserLocation(location) {
 };
 
 function reloadPage() {
-
+    var locationArray = [];
+    if (localStorage.getItem('searchHistory')) {
+        locationArray = [...JSON.parse(localStorage.getItem('searchHistory'))];
+        for (var i = 0; i < locationArray.length; i++) {
+            var recentItem = document.createElement("button");
+            recentItem.textContent = locationArray[i];
+            recentItem.setAttribute("id", locationArray[i]);
+            recentItem.className = "btn btn-primary col-12 btn-style btn-recent";
+            previousSearch.appendChild(recentItem);
+        }
+    }
 }
 
 // get location weather
@@ -88,7 +107,6 @@ function getLocationWeather(lat, lon) {
 };
 
 function displayWeatherResults(data) {
-
     // City Name and date
     var currentCityNameEl = document.querySelector(".jumbotron-header");
     currentCityNameEl.textContent = locationName.toUpperCase() + " (" + currentDate + ")";
@@ -195,6 +213,7 @@ function displayWeatherResults(data) {
 
 }
 
+reloadPage();
 
 // Submit button for the form
-locationFormEl.addEventListener("submit", formSubmitHaldler);
+locationFormEl.addEventListener("submit", formSubmitHandler);

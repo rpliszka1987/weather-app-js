@@ -14,9 +14,10 @@ var buttonClickedRecentEl = document.querySelector(".btn-recent");
 // From submit get input
 function formSubmitHandler() {
     event.preventDefault();
-    locationName = "";
+    // locationName = "";
     // get input from user
     locationName = locationInputEl.value.trim();
+
 
     if (locationName) {
         getUserLocation(locationName);
@@ -221,6 +222,7 @@ reloadPage();
 previousSearch.addEventListener("click", function (event) {
 
     var location = event.target.textContent;
+    locationName = location;
     getUserLocation(location);
 })
 // Submit button for the form

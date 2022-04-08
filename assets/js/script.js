@@ -8,6 +8,8 @@ var dayFourDate = moment().add(4, 'days').format("M[/]D[/]YY");
 var dayFiveDate = moment().add(5, 'days').format("M[/]D[/]YY");
 var locationName = "";
 var previousSearch = document.querySelector("#previous-search");
+var buttonClickedRecentEl = document.querySelector(".btn-recent");
+
 
 // From submit get input
 function formSubmitHandler() {
@@ -46,6 +48,7 @@ function getUserLocation(location) {
                 var recentItem = document.createElement("button");
                 recentItem.textContent = location;
                 recentItem.setAttribute("id", location);
+                recentItem.setAttribute("type", "submit");
                 recentItem.className = "btn btn-primary col-12 btn-style btn-recent";
                 previousSearch.appendChild(recentItem);
 
@@ -215,5 +218,10 @@ function displayWeatherResults(data) {
 
 reloadPage();
 
+previousSearch.addEventListener("click", function (event) {
+
+    var location = event.target.textContent;
+    getUserLocation(location);
+})
 // Submit button for the form
 locationFormEl.addEventListener("submit", formSubmitHandler);

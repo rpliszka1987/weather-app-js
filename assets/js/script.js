@@ -116,7 +116,7 @@ function displayWeatherResults(data) {
     currentCityNameEl.textContent = locationName.toUpperCase() + " (" + currentDate + ")";
     // Weather Icon
     var currentWeatherIconEl = document.querySelector("#current-icon");
-    currentWeatherIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png")
+    currentWeatherIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png");
 
     // Current Temp
     var currentTempEl = document.querySelector("#current-temp");
@@ -220,10 +220,9 @@ function displayWeatherResults(data) {
 reloadPage();
 
 previousSearch.addEventListener("click", function (event) {
-
     var location = event.target.textContent;
     locationName = location;
     getUserLocation(location);
-})
+});
 // Submit button for the form
 locationFormEl.addEventListener("submit", formSubmitHandler);

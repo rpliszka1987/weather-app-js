@@ -7,6 +7,10 @@
 - Right column displays the current weather: City Name with todays date, Temp, Wind, Humidity, UV index
 - Righ column displayes below 5 cards with 5 days upcoming weather showing: Date, Weather icon, Temp, Wind, and Humidity
 
+### Page Video
+
+![Page Screenshot](./assets/images/WeatherDashboard.gif)
+
 ## Page API
 
 - Page is using the OpenWeather One Call API to get the data request.
